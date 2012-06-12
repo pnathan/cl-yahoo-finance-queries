@@ -1,5 +1,9 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 (asdf:defsystem #:cl-yahoo-finance-query
   :components ((:file "cl-yahoo-finance-query"))
+  :depends-on (#:cl-yahoo-finance
+	       #:cl-finance-query)
   :name "cl-yahoo-finance-query"
   ;:version "dev"
   :maintainer "Paul Nathan"
