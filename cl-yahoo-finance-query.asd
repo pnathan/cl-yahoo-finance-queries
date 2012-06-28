@@ -5,7 +5,7 @@
   :depends-on (#:cl-yahoo-finance
 	       #:cl-finance-query)
   :name "cl-yahoo-finance-query"
-  ;:version "dev"
+  :version "0.1"
   :maintainer "Paul Nathan"
   :author "Paul Nathan"
   :license "LLGPL"
