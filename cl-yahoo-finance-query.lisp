@@ -115,14 +115,14 @@ Else, the number is converted to a ratio and returned.
             (destructuring-bind (date open high low close volume adj-close)
               data
 
-              (setf (cl-finance-query:name price-point) symbol)
-              (setf (cl-finance-query:date price-point) date)
-              (setf (cl-finance-query:open-price price-point) open)
-              (setf (cl-finance-query:close-price price-point) close)
-              (setf (cl-finance-query:high price-point) high)
-              (setf (cl-finance-query:low price-point) low)
-              (setf (cl-finance-query:volume price-point) volume)
-              (setf (cl-finance-query:adjusted-close price-point) adj-close)
+              (setf (cl-finance-query:symbol            price-point) symbol)
+              (setf (cl-finance-query:date            price-point) date)
+              (setf (cl-finance-query:open-price      price-point) open)
+              (setf (cl-finance-query:close-price     price-point) close)
+              (setf (cl-finance-query:high            price-point) high)
+              (setf (cl-finance-query:low             price-point) low)
+              (setf (cl-finance-query:volume          price-point) volume)
+              (setf (cl-finance-query:adjusted-close  price-point) adj-close)
               price-point)))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
