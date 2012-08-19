@@ -2,7 +2,9 @@
 ;; Implements the cl-finance-query protocol
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (defpackage :cl-yahoo-finance-query
-  (:use :common-lisp :cl-yahoo-finance :cl-finance-query)
+  (:use :common-lisp
+	:cl-yahoo-finance
+	:cl-finance-query)
   (:export
    :proxy
    :destroy
