@@ -80,14 +80,14 @@ Else, the number is converted to a ratio and returned.
 
             ;; Non-numerics
             (setf (cl-finance-query:ebitda pricing )  (cdr (assoc :ebitda data)))
-            (setf (cl-finance-query:symbol pricing) (cdr (assoc :symbol data)))
+            (setf (cl-finance-query:financial-symbol pricing) (cdr (assoc :symbol data)))
             (setf (cl-finance-query:name pricing) (cdr (assoc :name data)))
             pricing))))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (defmethod historical-prices ((reader cl-yahoo-finance-querier)
-			  symbol
+			  financial-symbol
 			  start-date
 			  end-date)
   "Start-date is a triple mm dd yy format, as is end-date"
@@ -106,7 +106,7 @@ Else, the number is converted to a ratio and returned.
 
   ;; get the data
   (let ((price-list (rest (cl-yahoo-finance:read-historical-data
-                           symbol
+                           financial-symbol
                            start-date
                            end-date))))
 
@@ -117,7 +117,7 @@ Else, the number is converted to a ratio and returned.
             (destructuring-bind (date open high low close volume adj-close)
               data
 
-              (setf (cl-finance-query:symbol            price-point) symbol)
+              (setf (cl-finance-query:financial-symbol price-point) financial-symbol)
               (setf (cl-finance-query:date            price-point) date)
               (setf (cl-finance-query:open-price      price-point) open)
               (setf (cl-finance-query:close-price     price-point) close)
@@ -135,7 +135,7 @@ Else, the number is converted to a ratio and returned.
   (error "Not implemented"))
 
 (defmethod company-immutables ((reader cl-yahoo-finance-querier)
-				symbol-or-symbol-list)
+				symbol-or-symbols-list)
   (error "Not implemented"))
 
 (defmethod company-current-statistics ((reader cl-yahoo-finance-querier)
